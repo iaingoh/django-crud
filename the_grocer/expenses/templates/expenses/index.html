@@ -1,0 +1,13 @@
+{% if object_list %}
+    <ul>
+        {% for object in object_list %}
+            <li>
+                <a href="{% url 'expenses:detail' object.pk %}">{{ object.title }}</a>
+            </li>
+        {% endfor %}
+        <br>
+        <a href="{% url 'expenses:create' %}"><button type="button">New</button></a>
+    </ul>
+{% else %}
+    <h2>No files at the moment, why don't you add one?</h2>
+{% endif %}

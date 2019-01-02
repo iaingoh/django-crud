@@ -1,0 +1,13 @@
+{% if object %}
+    <ul>
+        <li>ID: {{object.id}}</li>
+        <li>Title: {{object.title}}</li>
+        <li>Type: {{object.type}}</li>
+        <li>Amount: {{object.amount}}</li>
+        <li>Location: {{object.location}}</li>
+        <li>Comments: {{object.comments}}</li>
+        <li>Date Posted: {{ object.date | date:"F d, Y" }}</li>
+    </ul>
+    <a href="{% url 'expenses:update' object.pk %}"><button type="button">Edit</button></a>
+    <a href="{% url 'expenses:delete' object.pk %}"><button type="button">Delete</button></a>
+{% endif %}
